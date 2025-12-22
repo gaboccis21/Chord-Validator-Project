@@ -1,40 +1,40 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { Music } from "lucide-react";
+import logo from "@/assets/harmoniq-logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <Music className="w-6 h-6 text-primary" />
-          <span className="font-semibold text-lg">Chord Validator</span>
+      <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+        <a href="/" className="flex items-center gap-3">
+          <img src={logo} alt="HarmoniQ" className="w-10 h-10 object-contain" />
+          <span className="font-bold text-xl text-secondary dark:text-foreground">HarmoniQ</span>
         </a>
         
         <div className="hidden md:flex items-center space-x-8">
-          <a href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
             Home
           </a>
-          <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
             About
           </a>
-          <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
             Features
           </a>
-          <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
             How It Works
           </a>
-          <a href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <a href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
             Contact
           </a>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          <Button size="sm">
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
             Try Validator
           </Button>
         </div>
@@ -53,26 +53,26 @@ const Navigation = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
           <div className="container mx-auto px-6 py-6 space-y-4">
-            <a href="/" className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <a href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
               Home
             </a>
-            <a href="#about" className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <a href="#about" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
               About
             </a>
-            <a href="#features" className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <a href="#features" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
               Features
             </a>
-            <a href="#how-it-works" className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <a href="#how-it-works" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
               How It Works
             </a>
-            <a href="/contact" className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
+            <a href="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-300">
               Contact
             </a>
             
             {/* Mobile Actions */}
             <div className="pt-4 border-t border-border flex items-center gap-4">
               <ThemeToggle />
-              <Button size="sm" className="flex-1">
+              <Button size="sm" className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
                 Try Validator
               </Button>
             </div>
