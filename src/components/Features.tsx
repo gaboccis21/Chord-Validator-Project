@@ -40,7 +40,7 @@ const Features = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-minimal text-muted-foreground mb-4">CAPABILITIES</h2>
+            <h2 className="text-minimal text-primary mb-4">CAPABILITIES</h2>
             <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-architectural">
               Key Features
             </h3>
@@ -50,7 +50,7 @@ const Features = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className="group bg-card hover:bg-accent/50 border-border hover:border-primary/20 transition-all duration-300 hover:shadow-elegant"
+                className="group bg-card hover:bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-elegant"
               >
                 <CardContent className="p-8">
                   <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">

@@ -27,7 +27,7 @@ const HowItWorks = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-minimal text-muted-foreground mb-4">PROCESS</h2>
+            <h2 className="text-minimal text-primary mb-4">PROCESS</h2>
             <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-architectural">
               How It Works
             </h3>
@@ -39,19 +39,19 @@ const HowItWorks = () => {
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-16 left-full w-full">
-                    <ArrowRight className="w-8 h-8 text-border absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                    <ArrowRight className="w-8 h-8 text-primary/30 absolute left-1/2 -translate-x-1/2 -translate-y-1/2" />
                   </div>
                 )}
                 
                 <div className="text-center">
                   {/* Step Number */}
-                  <div className="text-7xl md:text-8xl font-bold text-muted/50 mb-4 group-hover:text-primary/20 transition-colors duration-300">
+                  <div className="text-7xl md:text-8xl font-bold text-primary/10 mb-4 group-hover:text-primary/20 transition-colors duration-300">
                     {step.number}
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <step.icon className="w-10 h-10 text-primary-foreground" />
+                  <div className="w-20 h-20 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <step.icon className="w-10 h-10 text-primary" />
                   </div>
                   
                   {/* Content */}
