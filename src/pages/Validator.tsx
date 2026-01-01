@@ -345,8 +345,11 @@ const Validator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-secondary dark:bg-background text-foreground p-4 md:p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-secondary via-secondary/95 to-primary/10 dark:from-background dark:via-background/95 dark:to-primary/5 text-foreground p-4 md:p-6 relative overflow-hidden">
+      {/* Subtle gradient orbs for depth */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <Link to="/" className="flex items-center gap-2 px-4 py-2 bg-background/30 hover:bg-background/50 rounded-lg border border-primary/20 transition-colors">
