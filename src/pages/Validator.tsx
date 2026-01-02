@@ -352,7 +352,7 @@ const Validator = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <Link to="/" className="flex items-center gap-2 px-4 py-2 bg-background/30 hover:bg-background/50 rounded-lg border border-primary/20 transition-colors">
+          <Link to="/" className="flex items-center gap-2 px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 rounded-lg border border-primary/20 transition-colors text-white">
             <Home className="w-4 h-4" />
             <span className="text-sm">Exit</span>
           </Link>
@@ -380,16 +380,16 @@ const Validator = () => {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-accent" />
-                <h2 className="text-lg font-semibold">Enter Chord Progression</h2>
+                <h2 className="text-lg font-semibold text-white">Enter Chord Progression</h2>
               </div>
               
               {/* Key Selector */}
               <div className="flex items-center gap-2">
-                <span className="text-xs text-muted-foreground">Key:</span>
+                <span className="text-xs text-slate-300">Key:</span>
                 <select
                   value={selectedKey}
                   onChange={(e) => handleKeyChange(e.target.value)}
-                  className="bg-slate-700/80 border border-primary/30 rounded-lg px-3 py-1.5 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
+                  className="bg-slate-700/80 border border-primary/30 rounded-lg px-3 py-1.5 text-white text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
                 >
                   {majorKeys.map(k => (
                     <option key={k.key} value={k.key}>{k.name}</option>
@@ -402,10 +402,10 @@ const Validator = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={`Example: ${getScaleDegrees(selectedKey).slice(0, 4).join(', ')}`}
-              className="w-full h-28 bg-slate-700/60 dark:bg-slate-800/70 border border-primary/30 rounded-xl p-4 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-mono text-lg"
+              className="w-full h-28 bg-slate-700/60 dark:bg-slate-800/70 border border-primary/30 rounded-xl p-4 text-white placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-mono text-lg"
             />
 
-            <p className="text-xs text-muted-foreground mt-2 flex items-center gap-2">
+            <p className="text-xs text-slate-300 mt-2 flex items-center gap-2">
               <Info className="w-3 h-3" />
               Current key: <strong className="text-primary">{majorKeys.find(k => k.key === selectedKey)?.name}</strong>
             </p>
@@ -505,13 +505,13 @@ const Validator = () => {
 
           {/* NFA Visualization */}
           <div className="bg-slate-800/70 dark:bg-slate-900/70 backdrop-blur rounded-2xl p-5 border border-primary/20">
-            <h2 className="text-lg font-semibold mb-4">NFA State Diagram</h2>
+            <h2 className="text-lg font-semibold text-white mb-4">NFA State Diagram</h2>
             <div className="relative bg-slate-800/60 dark:bg-slate-900/70 rounded-xl border border-primary/20 overflow-hidden" style={{ height: '360px' }}>
               {!hasValidated && (
                 <div className="absolute inset-0 flex items-center justify-center bg-slate-900/90 backdrop-blur-sm z-10">
                   <div className="text-center">
                     <Zap className="w-10 h-10 text-primary mx-auto mb-2 animate-pulse" />
-                    <p className="text-muted-foreground text-sm">Click "Validate" to see NFA states</p>
+                    <p className="text-slate-300 text-sm">Click "Validate" to see NFA states</p>
                   </div>
                 </div>
               )}
