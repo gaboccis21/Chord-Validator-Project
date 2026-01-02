@@ -376,7 +376,7 @@ const Validator = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
           {/* Input Section */}
-          <div className="bg-card/50 backdrop-blur rounded-2xl p-5 border border-primary/20">
+          <div className="bg-slate-800/70 dark:bg-slate-900/70 backdrop-blur rounded-2xl p-5 border border-primary/20">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-accent" />
@@ -389,7 +389,7 @@ const Validator = () => {
                 <select
                   value={selectedKey}
                   onChange={(e) => handleKeyChange(e.target.value)}
-                  className="bg-background/50 border border-primary/30 rounded-lg px-3 py-1.5 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
+                  className="bg-slate-700/80 border border-primary/30 rounded-lg px-3 py-1.5 text-foreground text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 cursor-pointer"
                 >
                   {majorKeys.map(k => (
                     <option key={k.key} value={k.key}>{k.name}</option>
@@ -402,7 +402,7 @@ const Validator = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={`Example: ${getScaleDegrees(selectedKey).slice(0, 4).join(', ')}`}
-              className="w-full h-28 bg-background/50 border border-primary/30 rounded-xl p-4 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-mono text-lg"
+              className="w-full h-28 bg-slate-700/60 dark:bg-slate-800/70 border border-primary/30 rounded-xl p-4 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-mono text-lg"
             />
 
             <p className="text-xs text-muted-foreground mt-2 flex items-center gap-2">
@@ -447,7 +447,7 @@ const Validator = () => {
 
             {/* Live Suggestions */}
             {input.trim() && liveSuggestions.length > 0 && !hasValidated && (
-              <div className="mt-4 p-3 bg-background/60 dark:bg-black/50 backdrop-blur-md rounded-xl border border-primary/30 shadow-lg">
+              <div className="mt-4 p-3 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-md rounded-xl border border-primary/30 shadow-lg">
                 <h3 className="text-xs font-semibold text-primary mb-2 flex items-center gap-2">
                   <Lightbulb className="w-3 h-3" />
                   Suggested next chords:
@@ -457,7 +457,7 @@ const Validator = () => {
                     <button
                       key={i}
                       onClick={() => setInput(input + (input.trim().endsWith(',') ? ' ' : ', ') + chord)}
-                      className="px-3 py-1.5 bg-background/80 dark:bg-black/60 hover:bg-primary/30 text-primary border border-primary/40 rounded-full text-xs font-mono transition-all shadow-lg backdrop-blur-sm hover:shadow-primary/20 hover:scale-105"
+                      className="px-3 py-1.5 bg-slate-700/90 hover:bg-primary/40 text-primary border border-primary/40 rounded-full text-xs font-mono transition-all shadow-lg backdrop-blur-sm hover:shadow-primary/20 hover:scale-105"
                     >
                       {chord}
                     </button>
@@ -474,7 +474,7 @@ const Validator = () => {
                   <button
                     key={i}
                     onClick={() => handleExample(ex.chords)}
-                    className="text-left p-2.5 bg-background/60 dark:bg-black/50 backdrop-blur-md hover:bg-primary/20 rounded-xl border border-primary/30 hover:border-primary/50 transition-all shadow-md hover:shadow-lg hover:scale-[1.02]"
+                    className="text-left p-2.5 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-md hover:bg-primary/20 rounded-xl border border-primary/30 hover:border-primary/50 transition-all shadow-md hover:shadow-lg hover:scale-[1.02]"
                   >
                     <div className="text-xs text-primary font-semibold">{ex.name}</div>
                     <div className="text-[10px] text-muted-foreground">{ex.desc}</div>
@@ -492,7 +492,7 @@ const Validator = () => {
                   <button
                     key={i}
                     onClick={() => handleExample(ex.chords)}
-                    className="text-left p-2.5 bg-background/60 dark:bg-black/50 backdrop-blur-md hover:bg-destructive/20 rounded-xl border border-destructive/30 hover:border-destructive/50 transition-all shadow-md hover:shadow-lg hover:scale-[1.02]"
+                    className="text-left p-2.5 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-md hover:bg-destructive/20 rounded-xl border border-destructive/30 hover:border-destructive/50 transition-all shadow-md hover:shadow-lg hover:scale-[1.02]"
                   >
                     <div className="text-xs text-destructive font-semibold">{ex.name}</div>
                     <div className="text-[10px] text-muted-foreground">{ex.desc}</div>
@@ -504,11 +504,11 @@ const Validator = () => {
           </div>
 
           {/* NFA Visualization */}
-          <div className="bg-card/50 backdrop-blur rounded-2xl p-5 border border-primary/20">
+          <div className="bg-slate-800/70 dark:bg-slate-900/70 backdrop-blur rounded-2xl p-5 border border-primary/20">
             <h2 className="text-lg font-semibold mb-4">NFA State Diagram</h2>
-            <div className="relative bg-background/50 rounded-xl border border-primary/20 overflow-hidden" style={{ height: '360px' }}>
+            <div className="relative bg-slate-800/60 dark:bg-slate-900/70 rounded-xl border border-primary/20 overflow-hidden" style={{ height: '360px' }}>
               {!hasValidated && (
-                <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-10">
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-900/90 backdrop-blur-sm z-10">
                   <div className="text-center">
                     <Zap className="w-10 h-10 text-primary mx-auto mb-2 animate-pulse" />
                     <p className="text-muted-foreground text-sm">Click "Validate" to see NFA states</p>
@@ -637,12 +637,12 @@ const Validator = () => {
 
             {/* Chord History */}
             {chordHistory.length > 0 && (
-              <div className="mt-4 p-3 bg-background/60 dark:bg-black/50 backdrop-blur-md rounded-xl border border-primary/30 shadow-lg">
+              <div className="mt-4 p-3 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-md rounded-xl border border-primary/30 shadow-lg">
                 <h3 className="text-xs font-semibold text-muted-foreground mb-2">Transition Path:</h3>
                 <div className="flex flex-wrap items-center gap-1.5">
                   {chordHistory.map((item, i) => (
                     <React.Fragment key={i}>
-                      <span className="px-3 py-1.5 bg-background/80 dark:bg-black/70 text-primary border border-primary/40 rounded-full text-xs font-mono shadow-md backdrop-blur-sm">
+                      <span className="px-3 py-1.5 bg-slate-700/90 text-primary border border-primary/40 rounded-full text-xs font-mono shadow-md backdrop-blur-sm">
                         {item.chord} <span className="text-primary-foreground/70">({item.function})</span>
                       </span>
                       {i < chordHistory.length - 1 && (
@@ -658,7 +658,7 @@ const Validator = () => {
 
         {/* Results Section */}
         {result && (
-          <div className={`bg-card/50 backdrop-blur rounded-2xl p-5 border ${
+          <div className={`bg-slate-800/70 dark:bg-slate-900/70 backdrop-blur rounded-2xl p-5 border ${
             result.valid ? 'border-emerald-500/50' : 'border-destructive/50'
           } mb-6`}>
             <div className="flex items-start gap-4">
@@ -676,7 +676,7 @@ const Validator = () => {
                 <p className="text-muted-foreground text-sm">{result.explanation}</p>
 
                 {result.suggestions && result.suggestions.length > 0 && (
-                  <div className="mt-4 bg-background/60 dark:bg-black/50 backdrop-blur-md rounded-xl p-4 border border-primary/30 shadow-lg">
+                  <div className="mt-4 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-md rounded-xl p-4 border border-primary/30 shadow-lg">
                     <h4 className="font-semibold text-primary text-sm mb-3 flex items-center gap-2">
                       <Lightbulb className="w-4 h-4" />
                       Suggested next chords:
@@ -686,7 +686,7 @@ const Validator = () => {
                         <button
                           key={i}
                           onClick={() => setInput(input + (input.trim() ? ', ' : '') + chord)}
-                          className="px-3 py-1.5 bg-background/80 dark:bg-black/60 hover:bg-primary/30 text-primary border border-primary/40 rounded-full text-xs font-mono transition-all shadow-lg backdrop-blur-sm hover:shadow-primary/20 hover:scale-105"
+                          className="px-3 py-1.5 bg-slate-700/90 hover:bg-primary/40 text-primary border border-primary/40 rounded-full text-xs font-mono transition-all shadow-lg backdrop-blur-sm hover:shadow-primary/20 hover:scale-105"
                         >
                           {chord}
                         </button>
